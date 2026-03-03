@@ -1,6 +1,6 @@
-# OpenMeets Backend
+# OpenMeets
 
-Event management platform backend API built with FastAPI and PostgreSQL.
+Event management platform built with Svelte, TypeScript, FastAPI, and GraphQL.
 
 ---
 
@@ -12,11 +12,37 @@ OpenMeets is a multi-tenant event management platform that enables organizations
 
 ---
 
+## Project Structure
+
+This is a monorepo with the following structure:
+
+```
+openmeet/
+├── backend/     # FastAPI + Strawberry GraphQL API
+├── frontend/    # Svelte + TypeScript application
+└── docs/        # Documentation
+```
+
+---
+
 ## Tech Stack
+
+### Frontend
+
+| Component | Technology |
+|-----------|------------|
+| **Framework** | Svelte |
+| **Language** | TypeScript |
+| **State Management** | Svelte Stores |
+| **Styling** | TailwindCSS |
+| **GraphQL Client** | Urql / Apollo Client |
+
+### Backend
 
 | Component | Technology |
 |-----------|------------|
 | **Framework** | FastAPI (Python 3.13+) |
+| **GraphQL** | Strawberry |
 | **Database** | PostgreSQL 15+ |
 | **ORM** | SQLAlchemy 2.0 (Async) |
 | **Migrations** | Alembic |
@@ -77,6 +103,37 @@ OpenMeets is a multi-tenant event management platform that enables organizations
 - Customizable ticket designs
 - PDF ticket generation with QR codes
 - Inventory management
+
+---
+
+## Getting Started
+
+### Backend
+
+```bash
+cd backend
+uv sync
+uv run main.py
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## Documentation
+
+See the [`docs/`](docs/) directory for detailed documentation:
+
+- [Architecture](docs/ARCHITECTURE.md)
+- [Features](docs/FEATURES.md)
+
+---
 
 ## License
 
